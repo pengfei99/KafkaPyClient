@@ -23,7 +23,7 @@ class Consumer(threading.Thread):
     daemon = True
 
     def run(self):
-        topic = "test-topic"
+        topic = "hive-meta"
         consumer = KafkaConsumer(bootstrap_servers='localhost:9092',
                                  auto_offset_reset='earliest',
                                  value_deserializer=lambda m: json.loads(m.decode('utf-8')))
@@ -34,7 +34,7 @@ class Consumer(threading.Thread):
 
 def main():
     threads = [
-        Producer(),
+       # Producer(),
         Consumer()
     ]
     for t in threads:
