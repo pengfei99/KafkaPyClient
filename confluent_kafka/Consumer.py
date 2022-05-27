@@ -6,7 +6,7 @@ from confluent_kafka import Consumer, KafkaError, KafkaException
 
 class ExampleConsumer:
     broker = "localhost:9092"
-    topic = "test-topic"
+    topic = "hive-meta"
     group_id = "consumer-1"
 
     def start_listener(self):
